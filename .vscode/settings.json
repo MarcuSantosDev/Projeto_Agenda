@@ -1,0 +1,24 @@
+{
+  "workbench.colorTheme": "Cobalt2",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontSize": 14.5,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "python.createEnvironment.trigger": "off",
+  "java.completion.favoriteStaticMembers": [
+    "org.junit.Assert.*",
+    "org.junit.Assume.*",
+    "org.junit.jupiter.api.Assertions.*",
+    "org.junit.jupiter.api.Assumptions.*",
+    "org.junit.jupiter.api.DynamicContainer.*",
+    "org.junit.jupiter.api.DynamicTest.*",
+    "org.mockito.Mockito.*",
+    "org.mockito.ArgumentMatchers.*",
+    "org.mockito.Answers.*"
+  ]
+}
