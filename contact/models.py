@@ -1,3 +1,11 @@
 from django.db import models
+from django.utils import timezone # tempo atual
 
-# Create your models here.
+class Contato(models.Model):
+  first_name = models.CharField(max_length=50)
+  last_name = models.CharField(max_length=50,blank=True)
+  telefone = models.CharField(max_length=50)
+  email = models.EmailField(max_length=254, blank=True)
+  create_date = models.DateTimeField(default=timezone.now)  # Django executa a função timezone.now() quando o objeto Contato é criado
+  description = models.TextField(blank=True)
+  

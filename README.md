@@ -1,7 +1,6 @@
 🗓️ Agenda - Gerenciador de Compromissos
 Este é um sistema web de Agenda, desenvolvido com Python e Django, que permite aos usuários cadastrar, visualizar, editar e excluir compromissos de forma simples e eficiente.
 
-
 🚀 Funcionalidades:
 
 ✅ Cadastro de compromissos
@@ -15,7 +14,6 @@ Este é um sistema web de Agenda, desenvolvido com Python e Django, que permite 
 ✅ Interface web amigável
 
 ✅ Painel administrativo Django
-
 
 🔧 Tecnologias Utilizadas:
 
