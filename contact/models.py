@@ -9,7 +9,7 @@ class Contact(models.Model):
   create_date = models.DateTimeField(default=timezone.now)  # Django executa a função timezone.now() quando o objeto Contato é criado
   description = models.TextField(blank=True)
   show = models.BooleanField(default=True)
-  picture = models.ImageField(blank=True,upload_to='pictures/%Y/%m')
+  picture = models.ImageField(blank=True,upload_to='pictures/%Y/%m') # Depende do pillow
 
   def __str__(self) -> str:
     return f'{self.first_name} {self.last_name}'
