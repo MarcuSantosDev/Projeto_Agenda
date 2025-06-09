@@ -5,7 +5,7 @@ class Category(models.Model):
   name = models.CharField(max_length=50)
 
   def __str__(self) -> str:
-    return f'self.name'
+    return f'{self.name}'
 
 
 class Contact(models.Model):
@@ -17,7 +17,7 @@ class Contact(models.Model):
   description = models.TextField(blank=True)
   show = models.BooleanField(default=True)
   picture = models.ImageField(blank=True,upload_to='pictures/%Y/%m') # Depende do pillow
-  Category = models.ForeignKey(Category,
+  category = models.ForeignKey(Category,
   on_delete=models.SET_NULL,  # Tipos de on_delete => 1) CASCADE 2) SET_NULL 3) PROTECT 4 ) SET_DEFAULT
  
   blank=True,null=True)   
