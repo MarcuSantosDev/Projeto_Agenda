@@ -4,6 +4,9 @@ from django.utils import timezone # tempo atual
 class Category(models.Model):
   name = models.CharField(max_length=50)
 
+  def __str__(self) -> str:
+    return f'self.name'
+
 
 class Contact(models.Model):
   first_name = models.CharField(max_length=50)
