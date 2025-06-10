@@ -2,12 +2,12 @@ from django.db import models
 from django.utils import timezone # tempo atual
 
 class Category(models.Model):
-  class Meta:
-    verbose_name = 'Category'
-    verbose_name_plural = 'Categories'
-
   name = models.CharField(max_length=50)
 
+  class Meta:
+    verbose_name = 'Category'
+    verbose_name_plural = 'Categories'  
+  
   def __str__(self) -> str:
     return f'{self.name}'
 
@@ -23,9 +23,12 @@ class Contact(models.Model):
   picture = models.ImageField(blank=True,upload_to='pictures/%Y/%m') # Depende do pillow
   category = models.ForeignKey(Category,
   on_delete=models.SET_NULL,  # Tipos de on_delete => 1) CASCADE 2) SET_NULL 3) PROTECT 4 ) SET_DEFAULT
- 
   blank=True,null=True)   
 
+  class Meta:
+    verbose_name = 'Contact'
+    verbose_name_plural = 'Contacts' 
+  
   def __str__(self) -> str:
     return f'{self.first_name} {self.last_name}'
   
