@@ -4,6 +4,8 @@ from datetime import datetime
 from pathlib import Path
 from random import choice
 
+# Criar Dados aleatórios 
+
 import django
 from django.conf import settings
 
