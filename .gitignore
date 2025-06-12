@@ -16,7 +16,7 @@ venv.bak/
 *.env.*
 .env.local
 .settings/
-local_settings.py
+project/local_settings.py
 
 # Arquivos de log
 *.log
@@ -63,3 +63,4 @@ dist/
 # Sistema
 .DS_Store
 Thumbs.db
+
