@@ -17,9 +17,9 @@ Este é um sistema web de Agenda, desenvolvido com Python e Django, que permite 
 
 🔧 Tecnologias Utilizadas:
 
-🐍 Python
+🐍 Python 3.10.0
 
-⚙️ Django
+⚙️ Django 5.2.1
 
 🗄️ SQLite (padrão) ou PostgreSQL (opcional)
 
