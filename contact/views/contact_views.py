@@ -10,7 +10,7 @@ def index(request):
   return render(request, 'contact/index.html',context)
 
 def contact(request,contact_id):
-  single_contact = get_object_or_404(Contact.objects.filter(pk=contact_id),show=True) # Se não houver id existente levanta erro 404
+  single_contact = get_object_or_404(Contact,pk=contact_id,show=True) # Se não houver id existente levanta erro 404
   context = {
     'contact': single_contact,
   }
