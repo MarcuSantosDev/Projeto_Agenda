@@ -2,7 +2,14 @@
   <h1 class="header-heading">
     <a href="{% url 'contact:index' %}" class="header-link">Agenda</a>
   </h1>
-
+  {% if user.is_authenticated %}
+  <form action="{% url 'logout' %}" method="post" style="display: inline">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+  {% else %}
+  <a href="{% url 'login' %}">Entrar</a>
+  {% endif %}
   <nav class="menu">
     <ul class="menu-list">
       <li class="menu-item">
@@ -18,7 +25,7 @@
       <input
         type="text"
         class="search-input"
-        placeholder="search"
+        placeholder="pesquisa"
         id="search"
         name="q"
       />

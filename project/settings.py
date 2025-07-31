@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'contact', # Adiciona o app
+    'contact',  
 ]
 
 MIDDLEWARE = [
@@ -126,6 +126,10 @@ STATIC_ROOT = BASE_DIR / 'static' # collect static
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media' 
+LOGIN_REDIRECT_URL = '/' # URL LOGIN
+LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGIN_URL = '/accounts/login/'
+ 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

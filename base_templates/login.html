@@ -1,0 +1,27 @@
+{% include "global/partials/_head.html" %} 
+ 
+<div class="form-wrapper">
+  <h2 class="header-heading" style="text-align: center">Login</h2>
+
+  {% if form.errors %}
+  <div class="message error">Usuário ou senha inválidos.</div>
+  {% endif %}
+
+  <form method="post" class="form-content">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="id_username">Usuário</label>
+      <input type="text" name="username" id="id_username" required />
+    </div>
+
+    <div class="form-group">
+      <label for="id_password">Senha</label>
+      <input type="password" name="password" id="id_password" required />
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn">Entrar</button>
+    </div>
+  </form>
+</div>
