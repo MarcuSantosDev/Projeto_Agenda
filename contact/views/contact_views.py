@@ -21,7 +21,7 @@ def search(request):
   
   if search_value == '':
     return redirect('contact:index')
-  print(search_value)
+ 
   contacts = Contact.objects.filter(show=True).order_by('id').filter(
     Q(first_name__icontains=search_value) |   # Classe Q permite usar or usando um "|"
     Q(last_name__icontains=search_value) |
@@ -29,10 +29,11 @@ def search(request):
     Q(email__icontains=search_value)
     ) # __ icontains é um teste de contenção que não diferencia maiúsculas de minúsculas.
 
-  print(contacts.query)
+   
   context = {
     'contacts': contacts,
-    'site_title': 'Site - '
+    'site_title': 'Site - ',
+    'search_value': search_value,
   }
   return render(request, 'contact/index.html',context)
 
