@@ -4,21 +4,26 @@ from django.http import Http404
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render,redirect
 from django.db.models import Q
-
+from django.core.paginator import Paginator
+ 
+# Função para mostrar contatos na página principal
 @login_required
 def index(request):
   contacts = Contact.objects.filter(show=True).order_by('id')
+  paginator = Paginator(contacts, 10)  
+  page_number = request.GET.get("page")
+  page_obj = paginator.get_page(page_number)
+  
   context = {
-    'contacts': contacts,
+    'page_obj': page_obj,
     'site_title': 'Contatos - '
   }
   return render(request, 'contact/index.html',context)
 
+# Função pro campo de pesquisa
 @login_required
 def search(request):
-  search_value = request.GET.get('q','').strip() # Se não encontrar a queryset volta string vazia
-  print('search_value',search_value)
-  
+  search_value = request.GET.get('q','').strip() # Se não encontrar a queryset volta string vazia  
   if search_value == '':
     return redirect('contact:index')
  
@@ -28,10 +33,12 @@ def search(request):
     Q(phone__icontains=search_value) |
     Q(email__icontains=search_value)
     ) # __ icontains é um teste de contenção que não diferencia maiúsculas de minúsculas.
-
-   
+  paginator = Paginator(contacts, 10)  
+  page_number = request.GET.get("page")
+  page_obj = paginator.get_page(page_number)
+    
   context = {
-    'contacts': contacts,
+    'page_obj': page_obj,
     'site_title': 'Site - ',
   }
   return render(request, 'contact/index.html',context)
